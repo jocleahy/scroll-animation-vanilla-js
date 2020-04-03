@@ -35,7 +35,6 @@ img {
 
 /* ANIMATION */
 
-
 .fade-in {
     opacity: 0;
     transform: scale(.9)
@@ -45,8 +44,30 @@ img {
     animation: fade-in .3s ease-in forwards;
 }
 
+.slide-left {
+    opacity: 0;
+    transform: translateX(-30%);
+}
+
+.slide-left.active {
+    animation: slide-left .5s ease-in forwards;
+}
+
 
 /* KEYFRAMES */
+@keyframes slide-left {
+    from {
+        opacity: 0;
+        transform: translateX(-30%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
 @keyframes fade-in {
     from {
         opacity: 0;
