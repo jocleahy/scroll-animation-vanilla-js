@@ -31,3 +31,30 @@ img {
         font-size: 1.25rem;
     }
 }
+
+
+/* ANIMATION */
+
+
+.fade-in {
+    opacity: 0;
+    transform: scale(.9)
+}
+
+.fade-in.active {
+    animation: fade-in .3s ease-in forwards;
+}
+
+
+/* KEYFRAMES */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: scale(.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
