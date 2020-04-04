@@ -11,9 +11,20 @@ const debounce = (func, delay = 20) => {
 
 const hasAnimations = document.querySelectorAll('.has-animation');
 
+function init() {
+    hasAnimations.forEach(hasAnimation => {
+        const animation = hasAnimation.dataset.animation;
+        const duration = hasAnimation.dataset.duration;
+
+        hasAnimation.classList.add(animation);
+        hasAnimation.style.animationDuration = `${duration}s`;
+
+
+    })
+} init();
+
 function isScrolling(e) {
 
-    console.count(e)
     hasAnimations.forEach(hasAnimation => {
         // calc bottom of viewport
         const viewBot = window.innerHeight + window.scrollY;
