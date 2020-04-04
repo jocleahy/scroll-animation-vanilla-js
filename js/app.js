@@ -10,7 +10,9 @@ const debounce = (func, delay = 20) => {
 }
 
 const hasAnimations = document.querySelectorAll('.has-animation');
+const isShowcase = document.querySelectorAll('.showcase');
 
+// add animation class and set duration
 function init() {
     hasAnimations.forEach(hasAnimation => {
         const animation = hasAnimation.dataset.animation;
@@ -18,10 +20,27 @@ function init() {
 
         hasAnimation.classList.add(animation);
         hasAnimation.style.animationDuration = `${duration}s`;
-
-
     })
-} init();
+
+    resizeShowcaseImg();
+
+}
+
+// resize showcase images based on number per row option
+function resizeShowcaseImg() {
+    isShowcase.forEach(showcase => {
+        // number of images inside div
+        const img = showcase.querySelectorAll('img.has-animation');
+        // data-display not to exceed number of images
+        const numImages = (showcase.dataset.display > img.length) ? img.length : showcase.dataset.display;
+        // set image width + padding
+        const setWidth = ((100 / numImages) - 2) + '%';
+        img.forEach(e => {
+            e.style.width = setWidth;
+        })
+    })
+
+}
 
 function isScrolling(e) {
 
@@ -52,3 +71,5 @@ function isScrolling(e) {
 }
 
 window.addEventListener('scroll', debounce(isScrolling));
+
+init();
