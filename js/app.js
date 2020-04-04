@@ -1,6 +1,19 @@
+const debounce = (func, delay = 20) => {
+    let debounceTimer
+    return function () {
+        const context = this
+        const args = arguments
+        clearTimeout(debounceTimer)
+        debounceTimer
+            = setTimeout(() => func.apply(context, args), delay)
+    }
+}
+
 const hasAnimations = document.querySelectorAll('.has-animation');
 
 function isScrolling(e) {
+
+    console.count(e)
     hasAnimations.forEach(hasAnimation => {
         // calc bottom of viewport
         const viewBot = window.innerHeight + window.scrollY;
@@ -27,4 +40,4 @@ function isScrolling(e) {
     });
 }
 
-window.addEventListener('scroll', isScrolling);
+window.addEventListener('scroll', debounce(isScrolling));
