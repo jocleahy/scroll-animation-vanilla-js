@@ -84,8 +84,29 @@ img {
     animation: slide-up .5s ease-in forwards;
 }
 
+.slide-down {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+
+.slide-down.active {
+    animation: slide-down .5s ease-in forwards;
+}
+
 
 /* KEYFRAMES */
+@keyframes slide-down {
+    from {
+        opacity: 0;
+        transform: translateY(-30%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @keyframes slide-up {
     from {
         opacity: 0;
