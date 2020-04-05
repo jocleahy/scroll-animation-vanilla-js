@@ -31,8 +31,8 @@ function resizeShowcaseImg() {
     isShowcase.forEach(showcase => {
         // number of images inside div
         const img = showcase.querySelectorAll('img.has-animation');
-        // data-display not to exceed number of images
-        const numImages = (showcase.dataset.display > img.length) ? img.length : showcase.dataset.display;
+        // data-cols not to exceed number of images
+        const numImages = (showcase.dataset.cols > img.length) ? img.length : showcase.dataset.cols;
         // set image width + padding
         const setWidth = ((100 / numImages) - 2) + '%';
         img.forEach(e => {
