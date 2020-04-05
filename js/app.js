@@ -50,7 +50,7 @@ function isScrolling(e) {
 
         // calc when img comes into view
         // will add active class
-        const inView = viewBot - hasAnimation.clientHeight / 3;
+        const inView = viewBot - hasAnimation.clientHeight / 2;
 
         // calc bottom of image from top of page
         // will remove animation active class
