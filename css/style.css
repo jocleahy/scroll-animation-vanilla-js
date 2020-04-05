@@ -75,7 +75,29 @@ img {
 }
 
 
+.slide-up {
+    opacity: 0;
+    transform: translateY(30%);
+}
+
+.slide-up.active {
+    animation: slide-up .5s ease-in forwards;
+}
+
+
 /* KEYFRAMES */
+@keyframes slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(30%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @keyframes slide-right {
     from {
         opacity: 0;
