@@ -77,7 +77,7 @@ img {
 
 .slide-up {
     opacity: 0;
-    transform: translateY(30%);
+    transform: translateY(60%);
 }
 
 .slide-up.active {
@@ -86,7 +86,7 @@ img {
 
 .slide-down {
     opacity: 0;
-    transform: translateY(-30%);
+    transform: translateY(-60%);
 }
 
 .slide-down.active {
@@ -98,7 +98,7 @@ img {
 @keyframes slide-down {
     from {
         opacity: 0;
-        transform: translateY(-30%);
+        transform: translateY(-60%);
     }
 
     to {
@@ -110,7 +110,7 @@ img {
 @keyframes slide-up {
     from {
         opacity: 0;
-        transform: translateY(30%);
+        transform: translateY(60%);
     }
 
     to {
